@@ -134,8 +134,9 @@ if os.getcwd() == '/app':
     }
     # 让request.is_secure()承认X_Forwarded_Proto头
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    # 支持所有主机头
-    ALLOWED_HOSTS = ['*']
+    # 只允许heroku托管这个项目
+    ALLOWED_HOSTS = ['ouzy-learning-log.herokuapp.com']
+    DEBUG = False
     # 静态资产配置
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
